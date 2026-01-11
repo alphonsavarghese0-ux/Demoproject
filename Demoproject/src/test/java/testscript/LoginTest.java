@@ -26,10 +26,10 @@ public class LoginTest extends Base {
 
 	@Test(description = "To check UserIsAbleToLoginUsingInvalidUserName ")
 	public void verifyTheUserIsAbleToLoginUsingInvalidUserName() throws IOException {
-		// String username="Hello";
-		// String password="admin";
-		String username = ExcelUtility.getStringData(2, 0, "Loginpage");
-		String password = ExcelUtility.getStringData(2, 1, "Loginpage");
+		String username="Hello";
+		 String password="admin";
+		//String username = ExcelUtility.getStringData(2, 0, "Loginpage");
+		//String password = ExcelUtility.getStringData(2, 1, "Loginpage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUserName(username);
 		loginpage.enterThePassWord(password);
