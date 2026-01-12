@@ -8,6 +8,7 @@
         <methods>
           <include name="verifyTheUserIsAbleToLoginUsingInvalidUserName"/>
           <include name="initializebrowser"/>
+          <include name="verifyTheUserIsAbleTologinUsingValidCredentials"/>
         </methods>
       </class> <!-- testscript.LoginTest -->
     </classes>
