@@ -3,16 +3,15 @@
 <suite name="Suite">
 	<test thread-count="5" name="Test"><parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="testscript.LoginTest">
+			<class name="testscript.ManageNewsTest">
 				<methods>
-					<include
-						name="verifyTheUserIsAbleTologinUsingValidCredentials"></include>
-					<include
-						name="verifyTheUserIsAbleToLoginUsingInvalidUserName"></include>
+				
 				</methods>
 			</class>
 		</classes>
-	</test> <!--
+		
+	</test>
+ <!--
 	Test -->
 </suite> <!--
 Suite -->

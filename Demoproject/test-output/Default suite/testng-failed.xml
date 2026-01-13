@@ -5,8 +5,8 @@
     <classes>
       <class name="testscript.ManageNewsTest">
         <methods>
-          <include name="verifyUserIsAbletoClickMoreInfo"/>
           <include name="initializebrowser"/>
+          <include name="AlertPresent"/>
         </methods>
       </class> <!-- testscript.ManageNewsTest -->
     </classes>

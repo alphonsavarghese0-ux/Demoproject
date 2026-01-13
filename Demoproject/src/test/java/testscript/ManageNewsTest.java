@@ -1,38 +1,33 @@
 package testscript;
 
+import java.io.IOException;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import pages.LoginPage;
 import pages.ManageNewsPage;
+import utilities.ExcelUtility;
 
-public class ManageNewsTest extends LoginTest
+public class ManageNewsTest extends Base
 {
-	@Test
-	public void verifyUserIsAbletoClickMoreInfo()
+    @Test
+	public void AlertPresent() throws IOException
 	{
-	  ManageNewsPage managenewspage=new ManageNewsPage();
-	  managenewspage.moreInfo();
-			  
-	}
-	@Test
-	public void verifyUserIsAbleToClickNew()
-	{
-		ManageNewsPage managenewspage=new ManageNewsPage();
+		String username=ExcelUtility.getStringData(1, 0, "Loginpage");
+		String password = ExcelUtility.getStringData(1, 1, "Loginpage");
+		LoginPage loginpage=new LoginPage(driver);
+		loginpage.enterTheUserName(username);
+		loginpage.enterThePassWord(password);
+		loginpage.buttonClick();
+		
+		ManageNewsPage managenewspage=new ManageNewsPage(driver);
+		managenewspage.moreInfo();
 		managenewspage.newButtonClick();
-	}
-	@Test
-	public void verifyUserIsAbleToEnterNews() 
-	{
-		String news="Mega job Fair";
-		ManageNewsPage managenewspage=new ManageNewsPage();
-		managenewspage.enterTheNews(news);
-		
-	}
-	@Test
-	public void verifyUserIsAbleToClickSaveButton()
-	{
-		ManageNewsPage managenewspage=new ManageNewsPage();
+		managenewspage.enterTheNews("job fair");
 		managenewspage.clickSaveButton();
+		Boolean bool = managenewspage.checkAlert();
+		Assert.assertTrue(bool,"by giving news ,alert not present");
 		
-		boolean newspage=managenewspage.isAlertDisplayed(); 	
 	}
-
 }
